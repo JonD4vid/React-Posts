@@ -1,3 +1,39 @@
+*{
+    margin: auto;
+    padding: auto;
+    
+}
+
+li a{
+    color: #1aa126;
+}
+
 form a{
     margin-left: 5px;
 }
+
+.container{
+    margin: auto;
+    padding: auto;
+    max-width: 50px; 
+}
+
+.list-group-item{
+    text-align: center;
+}
+
+.posts_heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+.post_title{
+    padding-top: 20px;
+}
+
+.post_content{
+    text-align: center;
+}
+

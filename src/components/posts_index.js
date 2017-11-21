@@ -13,11 +13,16 @@ class PostsIndex extends Component {
 renderPosts(){
 return _.map(this.props.posts, post =>{
     return(
-        <li className="list-group-item" key={post.id}>
+        <li className="list-group-item"
+            key={post.id}>
+          <Link to={`/posts/${post.id}`}>
             {post.title}
+            </Link>
+            
         </li>
-    )
-})
+        
+    );
+});
 }
     render(){
         console.log(this.props.posts);
@@ -25,13 +30,16 @@ return _.map(this.props.posts, post =>{
             <div>
                 <div className="text-xs-right">
                 <Link className="btn btn-primary" to="/posts/new">
-                Add a Posts
+                Add a Post
                 </Link>
                 </div>
-<h3>Posts</h3>
+<h3 className="posts_heading">All Posts</h3>
 <ul className="list-group">
     {this.renderPosts()}
     </ul>
+    <p className="credit">
+            @Jon D. Wilson 2017
+        </p>
           </div>
         );
     }

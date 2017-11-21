@@ -1,8 +1,27 @@
-import {FETCH_POSTS} from '../actions';
+import {FETCH_POSTS, FETCH_POST, DELETE_POST} from '../actions';
 import _ from 'lodash';
 
 export default function (state = {}, action) {
     switch (action.type){
+
+        case DELETE_POST:
+        
+        return _.omit(state, action.payload);
+        case FETCH_POST:
+
+        //es5 syntax:
+       // const post =action.payload.data;
+       // const newState = { ...state,  };
+      // newState[post.id] = post;
+      //return newState;
+
+        //es6 syntax: 
+
+        return { ...state, [action.payload.data.id]: action.payload.data }
+                            //key interperlation.
+                            //whatever variable [action.payload.data.id] is,
+                            //make a new key on object using the [action.payload.data.id] value
+                            //then set it to action.payload.data
         case FETCH_POSTS:
         console.log(action.payload.data); //posts 1, posts 2
 

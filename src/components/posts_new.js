@@ -30,7 +30,11 @@ const className = `form-group ${ touched && error ? 'has-danger' : '' }`;
    
 onSubmit(values){
     console.log(values);
-    this.props.createPost(values);
+    this.props.history.push('/');
+    this.props.createPost(values, () => {
+        this.props.history.push('/');
+        
+    });
 }
     render() {
             const { handleSubmit } = this.props;
@@ -43,12 +47,12 @@ onSubmit(values){
             component={this.renderField}
             /> 
             <Field
-                label="Categories"
+                label="Category"
                 name="categories"
                 component={this.renderField}
             />
             <Field
-                label="Posts Go Here"
+                label="Enter Post here:"
                 name="content"
                 component={this.renderField}
             />
@@ -71,7 +75,7 @@ if(!values.title){
 
 }
 if(!values.categories){
-    errors.categories="Enter some categories";
+    errors.categories="Enter a category";
 }
 if (!values.content){
     errors.content="Enter some content";
